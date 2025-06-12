@@ -4,6 +4,7 @@ import { FlatList, Image, StyleSheet,  View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { imageData } from '../constants/constants';
 import { windowWidth, windowHeight } from '../constants/config';
+import { useNavigation } from '@react-navigation/native';
 
 
 const ImageCrouselComponet = ({ item }) => {
@@ -21,6 +22,7 @@ const ImageCrouselComponet = ({ item }) => {
 const ImageCrousel = () => {
     const [CurrentIndex, setCurrentIndex] = useState([])
     const flatListRef = useRef(null);
+     const navigation=useNavigation();
     const scrollEnd = (event) => {
         const contentOffset = event.nativeEvent.contentOffset.x;
         console.log(contentOffset, "contentoffset")

@@ -2,10 +2,11 @@
 import {  Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ImageCrousel from './ImageCrousel'
+import { useNavigation } from '@react-navigation/native';
 
 
 const App = () => {
-
+const navigation=useNavigation();
   return (
     <>
       <View style={styles.box}>
@@ -21,7 +22,7 @@ const App = () => {
       <Text style={{ paddingTop: 20, paddingHorizontal: 20, }}>Get the opportunity to stay that you dream of at an affordable price</Text>
 
 
-      <Pressable style={styles.button} >
+      <Pressable style={styles.button} onPress={()=>navigation.navigate('Login')} >
         <Text>
           Next
         </Text>
@@ -35,8 +36,8 @@ export default App
 
 const styles = StyleSheet.create({
   box: {
-    marginTop: 70,
-    marginHorizontal: 16,
+    // marginTop: 10,
+    marginHorizontal: 20,
     alignItems: 'flex-end',
 
   },
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     marginTop: 40,
-    borderRadius: 5,
+    borderRadius: 9,
     margin: 10,
     backgroundColor: '#FFB83A'
 
