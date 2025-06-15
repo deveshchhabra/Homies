@@ -12,7 +12,7 @@ const Login = () => {
         LoginOtp
         </Text>
       </Pressable>
-      <Pressable>
+   <Pressable onPress={()=>navigation.navigate('HomeScreen')}>
         
       <Text>
      Create as Guest

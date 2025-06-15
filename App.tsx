@@ -10,6 +10,10 @@ import LoginOtp from './src/componet/LoginOtp';
 import SignUp from './src/componet/SignUp';
 import LoginGuest from './src/componet/LoginGuest';
 import Verified from './src/componet/Verified';
+import HomeScreen from './src/componet/HomeScreen';
+import Property from './src/componet/Property/Property';
+import 'react-native-gesture-handler';
+// import './gesture-handler';
  const Stack = createStackNavigator();
 
  const MyStack=()=>{
@@ -22,6 +26,8 @@ import Verified from './src/componet/Verified';
            <Stack.Screen name="Verified" component={Verified} />
             <Stack.Screen name="LoginGuest" component={LoginGuest} />
             <Stack.Screen name="SignUp" component={SignUp} />
+               <Stack.Screen name="HomeScreen" component={HomeScreen} />
+               <Stack.Screen name="Property" component={Property} />
         </Stack.Navigator>
   )
  }
@@ -46,3 +52,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// HomeScreen
+//    └── Login → OtpScreen → Verified
+//                        ←        ←
+//                  (navigate back)
+// HomeScreen
+//    └── CreateAccount → OtpScreen → Verified
+//                               ←         ←
+//                         (navigate back)

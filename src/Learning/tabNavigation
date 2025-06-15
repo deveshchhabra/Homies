@@ -1,0 +1,108 @@
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Tab = createBottomTabNavigator();
+
+// Home Screen Component
+function HomeScreen({ navigation }) {
+  const handleJumpToProfile = () => {
+    // Jump to Profile tab with params
+    navigation.jumpTo('Profile', { owner: 'Michaś' });
+  };
+
+  const handleJumpToSettings = () => {
+    // Jump to Settings tab without params
+    navigation.jumpTo('Settings');
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Home Screen</Text>
+      <Button
+        title="Jump to Profile (with params)"
+        onPress={handleJumpToProfile}
+      />
+      <Button
+        title="Jump to Settings"
+        onPress={handleJumpToSettings}
+      />
+    </View>
+  );
+}
+
+// Profile Screen Component
+function ProfileScreen({ route, navigation }) {
+  // Access params passed via jumpTo
+  const { owner } = route.params || {};
+
+  const handleJumpToHome = () => {
+    navigation.jumpTo('Home');
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Profile Screen</Text>
+      {owner && <Text style={styles.param}>Owner: {owner}</Text>}
+      <Button
+        title="Jump to Home"
+        onPress={handleJumpToHome}
+      />
+    </View>
+  );
+}
+
+// Settings Screen Component
+function SettingsScreen({ navigation }) {
+  const handleJumpToProfile = () => {
+    navigation.jumpTo('Profile', { owner: 'Admin User' });
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Settings Screen</Text>
+      <Button
+        title="Jump to Profile (Admin)"
+        onPress={handleJumpToProfile}
+      />
+    </View>
+  );
+}
+
+// Main App Component
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: '#007AFF',
+          tabBarInactiveTintColor: '#8E8E93',
+        }}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  param: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 20,
+  },
+});
