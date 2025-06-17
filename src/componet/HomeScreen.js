@@ -5,7 +5,7 @@ import { windowHeight, windowWidth } from '../constants/config'
 import { useNavigation } from '@react-navigation/native';
 const Card=()=>{
     return (
-      
+
         <View style={styles.card} >
             <View>
             <Image 
@@ -34,7 +34,7 @@ const Card=()=>{
 const HomeScreen = () => {
      const navigation = useNavigation();
   return (
-    <Pressable onPress={()=>navigation.navigate('Property')}>
+    <Pressable onPress={()=>navigation.navigate('BottomTab')}>
         <ImageCrousel/>
       <Text style={{fontSize:20,padding:17,fontWeight:'bold'}}>Nearby your location</Text>
     <Card/>
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         padding:10,
         marginHorizontal:10,
          borderRadius:10,
+         backgroundColor:'red'
     },
     card1:{
         flexDirection:'row',

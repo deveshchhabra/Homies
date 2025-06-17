@@ -8,9 +8,9 @@ import { useNavigation } from '@react-navigation/native';
 const App = () => {
 const navigation=useNavigation();
   return (
-    <>
+    <View style={{backgroundColor:"#FFFFFF"}}>
       <View style={styles.box}>
-        <Text style={{ color: 'grey', fontFamily: 'Poppins', fontSize: 20 }}>Skip</Text>
+        <Text style={{ color: 'grey', fontFamily: 'Poppins', fontSize: 20 }}>Ski</Text>
       </View>
 
 
@@ -28,7 +28,7 @@ const navigation=useNavigation();
         </Text>
 
       </Pressable>
-    </>
+    </View>
   )
 }
 

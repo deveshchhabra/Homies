@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+import WrapperComponent from '../WrapperComponent';
 const Home = () => {
   return (
-    <View>
+<WrapperComponent>
       <Text>Home</Text>
-    </View>
+    </WrapperComponent>
   )
 }
 

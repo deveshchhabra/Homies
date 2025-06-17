@@ -21,11 +21,13 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-
+import WrapperComponent from './WrapperComponent';
 const LoginOtp = () => {
   const navigation = useNavigation();
 
   return (
+    <WrapperComponent>
+
     <View style={styles.container}>
       <Text>OtpScreen</Text>
 
@@ -36,6 +38,8 @@ const LoginOtp = () => {
         <Text style={styles.buttonText}>Go Back</Text>
       </Pressable>
     </View>
+    </WrapperComponent>
+
   );
 };
 

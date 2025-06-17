@@ -1,0 +1,590 @@
+// // import { StyleSheet, Text, View } from 'react-native'
+// // import React from 'react'
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// // const ChatRequest=()=>{
+// //   return (
+// //     <View>
+// //       <Text>ChatRequest</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const ContactUs=()=>{
+// //   return (
+// //     <View>
+// //       <Text>Contact-Us</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const Calling=()=>{
+// //   return(
+// //     <View>
+// //       <Text>Requesting</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const Tab = createMaterialTopTabNavigator();
+// // const Chat = () => {
+// //   return (
+// //     <Tab.Navigator tabBarPosition="top">
+// //       <Tab.Screen name="ChatRequest" component={ChatRequest}
+// //       options={{ title: 'Chat' }}
+// //       />
+ 
+// //       <Tab.Screen  name="Contact" component={ContactUs}
+      
+// //        />
+// //             <Tab.Screen name="Calls" component={Calling}/>
+// //     </Tab.Navigator>
+// //   )
+// // }
+
+// // export default Chat
+
+// // const styles = StyleSheet.create({})
+// // import { StyleSheet, Text, View, Button, BackHandler, Alert } from 'react-native';
+// // import React, { useEffect } from 'react';
+// // import { NavigationContainer, useNavigation } from '@react-navigation/native';
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+// // const Tab = createMaterialTopTabNavigator();
+
+// // const ScreenComponent = ({ label }) => {
+// //   const navigation = useNavigation();
+
+// //   useEffect(() => {
+// //     const backAction = () => {
+// //       Alert.alert('Back button pressed!', `Current Tab: ${label}`, [
+// //         {
+// //           text: 'Go Back',
+// //           onPress: () => navigation.goBack(),
+// //         },
+// //         {
+// //           text: 'Cancel',
+// //           style: 'cancel',
+// //         },
+// //       ]);
+// //       return true; // prevent default behavior
+// //     };
+
+// //     const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+// //     return () => backHandler.remove();
+// //   }, [navigation, label]);
+
+// //   return (
+// //     <View style={styles.screen}>
+// //       <Text style={styles.label}>{label}</Text>
+// //       <Button title="Go Back" onPress={() => navigation.goBack()} />
+// //     </View>
+// //   );
+// // };
+
+// // export default function App() {
+// //   return (
+
+// //       <Tab.Navigator backBehavior="order"> 
+// //         <Tab.Screen name="Tab1">
+// //           {() => <ScreenComponent label="Chat" />}
+// //         </Tab.Screen>
+// //         <Tab.Screen name="Tab2">
+// //           {() => <ScreenComponent label="Contacts" />}
+// //         </Tab.Screen>
+// //         <Tab.Screen name="Tab3">
+// //           {() => <ScreenComponent label="Settings" />}
+// //         </Tab.Screen>
+// //       </Tab.Navigator>
+   
+// //   );
+// // }
+
+// // const styles = StyleSheet.create({
+// //   screen: {
+// //     flex: 1,
+// //     justifyContent: 'center',
+// //     alignItems: 'center',
+// //   },
+// //   label: {
+// //     fontSize: 32,
+// //     marginBottom: 20,
+// //   },
+// // });
+
+
+
+// // import { StyleSheet, Text, View, Dimensions } from 'react-native'
+// // import React from 'react'
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+// // const ChatRequest = () => {
+// //   return (
+// //     <View>
+// //       <Text>ChatRequest</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const ContactUs = () => {
+// //   return (
+// //     <View>
+// //       <Text>ContactUs</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const Calling = () => {
+// //   return (
+// //     <View>
+// //       <Text>Requesting</Text>
+// //     </View>
+// //   )
+// // }
+
+// // const Tab = createMaterialTopTabNavigator();
+
+// // const Chat = () => {
+// //   const initialLayout = { width: Dimensions.get('window').width/2 };
+
+// //   return (
+// //     <Tab.Navigator
+// //       tabBarPosition="top"
+// //       initialLayout={initialLayout}  // 👈 adding initialLayout
+// //     >
+// //       <Tab.Screen name="ChatRequest" component={ChatRequest}
+// //       option={{headerTitle:"Chat"}}
+// //       />
+// //       <Tab.Screen name="Contact" component={ContactUs} />
+// //       <Tab.Screen name="Calls" component={Calling} />
+// //     </Tab.Navigator>
+// //   )
+// // }
+
+// // export default Chat
+
+// // import { StyleSheet, Text, View } from 'react-native';
+// // import React from 'react';
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+// // const ChatRequest = () => {
+// //   return (
+// //     <View>
+// //       <Text>ChatRequest</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const ContactUs = () => {
+// //   return (
+// //     <View>
+// //       <Text>Contact-Us</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Calling = () => {
+// //   return (
+// //     <View>
+// //       <Text>Requesting</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Tab = createMaterialTopTabNavigator();
+
+// // const Chat = () => {
+// //   return (
+// //     <Tab.Navigator tabBarPosition="top">
+// //       <Tab.Screen
+// //         name="ChatRequest"
+// //         component={ChatRequest}
+// //         options={{
+// //           tabBarLabel: ({ focused, color }) => (
+// //             <Text style={{ color: color, fontWeight: focused ? 'bold' : 'normal' }}>
+// //               Chat Messages
+// //             </Text>
+// //           ),
+// //         }}
+// //       />
+// //       <Tab.Screen
+// //         name="Contact"
+// //         component={ContactUs}
+// //         options={{
+// //           tabBarLabel: ({ focused, color }) => (
+// //             <Text style={{ color: color, fontWeight: focused ? 'bold' : 'normal' }}>
+// //               Contact Us
+// //             </Text>
+// //           ),
+// //         }}
+// //       />
+// //       <Tab.Screen
+// //         name="Calls"
+// //         component={Calling}
+// //         options={{
+// //           tabBarLabel: ({ focused, color }) => (
+// //             <Text style={{ color: color, fontWeight: focused ? 'bold' : 'normal' }}>
+// //               Call Requests
+// //             </Text>
+// //           ),
+// //         }}
+// //       />
+// //     </Tab.Navigator>
+// //   );
+// // };
+
+// // export default Chat;
+// // import { StyleSheet, Text, View } from 'react-native';
+// // import React from 'react';
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// // import Ionicons from 'react-native-vector-icons/Ionicons';
+
+// // const ChatRequest = () => {
+// //   return (
+// //     <View>
+// //       <Text>ChatRequest</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const ContactUs = () => {
+// //   return (
+// //     <View>
+// //       <Text>Contact-Us</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Calling = () => {
+// //   return (
+// //     <View>
+// //       <Text>Requesting</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Tab = createMaterialTopTabNavigator();
+
+// // const Chat = () => {
+// //   return (
+// //     <Tab.Navigator tabBarPosition="top">
+// //       <Tab.Screen
+// //         name="ChatRequest"
+// //         component={ChatRequest}
+// //         options={{
+// //           title: 'Chat',
+// //           tabBarIcon: ({ focused, color }) => (
+// //             <Ionicons
+// //               name={focused ? 'chatbubbles' : 'chatbubbles-outline'}
+// //               size={20}
+// //               color={color}
+// //             />
+// //           ),
+// //         }}
+// //       />
+// //       <Tab.Screen
+// //         name="Contact"
+// //         component={ContactUs}
+// //         options={{
+// //           title: 'Contact',
+// //           tabBarIcon: ({ focused, color }) => (
+// //             <Ionicons
+// //               name={focused ? 'call' : 'call-outline'}
+// //               size={20}
+// //               color={color}
+// //             />
+// //           ),
+// //         }}
+// //       />
+// //       <Tab.Screen
+// //         name="Calls"
+// //         component={Calling}
+// //         options={{
+// //           title: 'Calls',
+// //           tabBarShowIcon:false,
+// //           tabBarIcon: ({ focused, color }) => (
+// //             <Ionicons
+// //               name={focused ? 'people' : 'people-outline'}
+// //               size={20}
+// //               color={color}
+// //             />
+// //           ),
+// //         }}
+// //       />
+// //     </Tab.Navigator>
+// //   );
+// // };
+
+// // export default Chat;
+
+
+// // import { StyleSheet, Text, View } from 'react-native';
+// // import React from 'react';
+// // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+// // const ChatRequest = () => {
+// //   return (
+// //     <View style={styles.screen}>
+// //       <Text>ChatRequest</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const ContactUs = () => {
+// //   return (
+// //     <View style={styles.screen}>
+// //       <Text>Contact-Us</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Calling = () => {
+// //   return (
+// //     <View style={styles.screen}>
+// //       <Text>Requesting</Text>
+// //     </View>
+// //   );
+// // };
+
+// // const Tab = createMaterialTopTabNavigator();
+
+// // const Chat = () => {
+// //   return (
+// //     <Tab.Navigator tabBarPosition="top"
+    
+// //     screenOptions={{
+// //       swipeEnabled:true,
+// //        tabBarPressOpacity: 0.2, 
+// //         tabBarIndicatorStyle: {
+// //            tabBarActiveTintColor: 'blue',     // active label color
+// //     tabBarInactiveTintColor: 'gray',
+// //           backgroundColor: 'green', // color of the indicator (you can change)
+// //           height: 5, // thickness of the indicator
+// //           borderRadius: 2, // optional: rounded indicator
+// //           width: 60, // optional: fixed width (if you want)
+// //           marginLeft: 30, // optional: position adjust (if using fixed width)
+// //         },
+// //         tabBarIndicatorContainerStyle: {
+// //       // backgroundColor: 'pink', // light gray background behind the indicator
+// //       paddingHorizontal: 10,      // add space on left and right
+// //       marginBottom: 2,            // move indicator up or down
+// //     },
+// //       }}
+// //     >
+// //       <Tab.Screen
+// //         name="ChatRequest"
+// //         component={ChatRequest}
+// //         options={{
+// //           title: 'Chat',
+// //           tabBarLabel: () => (
+// //             <View style={styles.labelContainer}>
+// //               <Text style={styles.labelText}>Chat</Text>
+// //               <View style={styles.badge}>
+// //                 <Text style={styles.badgeText}>3</Text> {/* Badge number */}
+// //               </View>
+// //             </View>
+// //           ),
+// //         }}
+// //       />
+
+// //       <Tab.Screen
+// //         name="Contact"
+// //         component={ContactUs}
+// //         options={{
+// //           tabBarLabel: 'Contact',
+// //         }}
+// //       />
+// //       <Tab.Screen
+// //         name="Calls"
+// //         component={Calling}
+// //         options={{
+// //           tabBarLabel: 'Calls',
+// //         }}
+// //       />
+// //     </Tab.Navigator>
+// //   );
+// // };
+
+// // const styles = StyleSheet.create({
+// //   screen: {
+// //     flex: 1,
+// //     justifyContent: 'center',
+// //     alignItems: 'center',
+// //   },
+// //   labelContainer: {
+// //     flexDirection: 'row',
+// //     alignItems: 'center',
+// //   },
+// //   labelText: {
+// //     marginRight: 6,
+// //     fontSize: 14,
+// //   },
+// //   badge: {
+// //     backgroundColor: 'red',
+// //     borderRadius: 8,
+// //     paddingHorizontal: 6,
+// //     paddingVertical: 2,
+// //     justifyContent: 'center',
+// //     alignItems: 'center',
+// //     minWidth: 16,
+// //   },
+// //   badgeText: {
+// //     color: 'white',
+// //     fontSize: 12,
+// //     fontWeight: 'bold',
+// //   },
+// // });
+
+// // export default Chat;
+
+
+
+// import { StyleSheet, Text, View, Dimensions } from 'react-native';
+// import React from 'react';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+// const Tab = createMaterialTopTabNavigator();
+
+// const DummyScreen = ({ title }) => (
+//   <View style={styles.screen}>
+//     <Text style={styles.text}>{title}</Text>
+//   </View>
+// );
+
+// export default function MyTabs() {
+//   return (
+//     <Tab.Navigator
+//       screenOptions={{
+//         tabBarScrollEnabled: true,
+//         tabBarItemStyle: { width: 120 }, // Fixed width for each tab
+//         tabBarActiveTintColor: 'blue',
+//         tabBarInactiveTintColor: 'gray',
+//         tabBarIndicatorStyle: { backgroundColor: 'blue' },
+//       }}
+//     >
+//       <Tab.Screen name="Chat" children={() => <DummyScreen title="Chat" />} />
+//       <Tab.Screen name="Contacts" children={() => <DummyScreen title="Contacts" />} />
+//       <Tab.Screen name="Calls" children={() => <DummyScreen title="Calls" />} />
+//       <Tab.Screen name="Gallery" children={() => <DummyScreen title="Gallery" />} />
+//       <Tab.Screen name="Status" children={() => <DummyScreen title="Status" />} />
+//       <Tab.Screen name="Settings" children={() => <DummyScreen title="Settings" />} />
+//       <Tab.Screen name="Profile" children={() => <DummyScreen title="Profile" />} />
+//     </Tab.Navigator>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   screen: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     backgroundColor: '#f0f0f0',
+//   },
+//   text: {
+//     fontSize: 24,
+//   },
+// });
+
+
+
+// import React from 'react';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// import { View, Text, StyleSheet, Dimensions } from 'react-native';
+
+// const Tab = createMaterialTopTabNavigator();
+
+// const ChatRequest = () => (
+//   <View style={styles.screen}>
+//     <Text>Chat Request</Text>
+//   </View>
+// );
+
+// const ContactUs = () => (
+//   <View style={styles.screen}>
+//     <Text>Contact Us</Text>
+//   </View>
+// );
+
+// const Calling = () => (
+//   <View style={styles.screen}>
+//     <Text>Calling</Text>
+//   </View>
+// );
+
+// export default function MyTabs() {
+//   return (
+//     <Tab.Navigator
+//       screenOptions={{
+//         tabBarLabelStyle: { fontSize: 16, fontWeight: 'bold', color: 'black' },
+//         tabBarItemStyle: { width: 120 }, // each tab item width
+//         tabBarContentContainerStyle: { backgroundColor: '#f0f0f0' },
+//         tabBarStyle: { backgroundColor: '#4CAF50', elevation: 5 },
+//         lazy: true,
+//     lazyPlaceholder: () => (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <ActivityIndicator size="large" color="#0000ff" />
+//       </View>
+//     ),
+//         // overall tab bar style
+//       }}
+//     >
+//       <Tab.Screen name="ChatRequest" component={ChatRequest} />
+//       <Tab.Screen name="ContactUs" component={ContactUs} />
+//       <Tab.Screen name="Calling" component={Calling} />
+//     </Tab.Navigator>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   screen: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+// });
+
+
+
+import React from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Tab = createMaterialTopTabNavigator();
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Home Screen</Text>
+      <Button
+        title="Go to Profile"
+        onPress={() => navigation.jumpTo('Profile', { name: 'Michaś' })}
+      />
+    </View>
+  );
+};
+
+const ProfileScreen = ({ route }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Profile Screen</Text>
+      {route.params && <Text style={styles.text}>Hello, {route.params.name}!</Text>}
+    </View>
+  );
+};
+
+export default function App() {
+  return (
+ 
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
+  
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  text: { fontSize: 20, marginBottom: 20 },
+});

@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+ import WrapperComponent from '../WrapperComponent'
 const Payment = () => {
   return (
-    <View>
+< WrapperComponent>
       <Text>Payment</Text>
-    </View>
+   </WrapperComponent>
   )
 }
 

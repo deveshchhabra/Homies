@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+import WrapperComponent from '../WrapperComponent'
 const Store = () => {
   return (
-    <View>
+   <WrapperComponent>
       <Text>Store</Text>
      
-    </View>
+    </WrapperComponent>
   )
 }
 
