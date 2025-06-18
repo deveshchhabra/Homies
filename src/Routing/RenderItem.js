@@ -14,7 +14,7 @@ const RenderItem = ({ item, navigateToOther }) => {
  <WrapperComponent>
       <Pressable style={styles.section} onPress={handlePress}>
         <Text style={styles.labelText}>{item?.label}</Text>
-        <Ionicons name="chevron-forward" size={16} color="#999" />
+        <Ionicons name="chevron-forward" size={16} color="#999"  style={{ fontWeight: 'bold' }} />
       </Pressable>
       <View style={styles.separator} />
   </WrapperComponent>
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   labelText: {
     fontSize: 16,
     color: '#333',
+    fontWeight:'bold'
   },
   separator: {
     borderWidth: 1,

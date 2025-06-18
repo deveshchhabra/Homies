@@ -49,7 +49,7 @@ const MainTabs = () => (
     name="CD"
      component={CD}  
     options={{
-        title:"hello"
+        title:"C/D"
     }}/>
     <Tab.Screen name="Chat" component={Chat} />
     <Tab.Screen name="Store" component={Store} />

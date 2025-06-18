@@ -14,7 +14,7 @@ import RenderItem from './RenderItem';
 
 
 const CustomDrawerContent = ({ navigation }) => {
-  //  const navigation = useNavigation();
+   const navigation1 = useNavigation();
 
   const navigateToOther = (val) => {
     navigation.navigate(val)
@@ -34,12 +34,18 @@ const CustomDrawerContent = ({ navigation }) => {
         />
 
         <View>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10 }}>SonuChhabra</Text>
-          <Text style={{ fontSize: 18, color: '#666', marginLeft: 10 }}>Sonu@gmail.com</Text>
-          <Pressable onPress={() => navigation1.navigate('Profile')} >
+          <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10 }}>Daniela Chikitani</Text>
+          <Text style={{ fontSize: 15, color: '#666', marginLeft: 10 }}>Daniela@gmail.com</Text>
+          <Pressable onPress={() => navigation1.navigate('Profile')} style={{flexDirection:'row'}} >
 
-            <Text style={{ fontSize: 15, paddingHorizontal: 10 }}>View Profile <Text style={{ fontSize: 14 }}>→</Text></Text>
-          </Pressable>
+
+            <Text style={{ fontSize: 15, 
+            paddingHorizontal: 11,
+           
+            marginTop:15,
+            
+            fontFamily:'Poppins' }}>View Profile </Text><Text style={{ fontSize:25,marginTop:10}}>→</Text>
+         </Pressable>
         </View>
 
       </View>
@@ -106,7 +112,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     paddingTop: 10,
-    paddingLeft: 30,
+    padding:9,
 
   },
   box: {
