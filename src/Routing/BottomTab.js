@@ -9,7 +9,7 @@ import Payment from '../componet/Property/Payment';
 import CD from '../componet/Property/CD';
 import Chat from '../componet/Property/Chat';
 import Store from '../componet/Property/Store';
-import WarehouseIcon from '../constants/assets/Warehouse.svg';
+// import WarehouseIcon from '../constants/assets/Warehouse.svg';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -27,12 +27,12 @@ const MainTabs = () => (
           case 'Payment':
             iconName = focused ? 'wallet' : 'wallet-outline';
             return <Ionicons name={iconName} size={size} color={color} />;
-          case 'CD':
-            return (
-              <View style={{ width: size, height: size, justifyContent: 'center', alignItems: 'center' }}>
-                <WarehouseIcon width={size} height={size} fill={color} />
-              </View>
-            );
+          // case 'CD':
+          //   return (
+          //     <View style={{ width: size, height: size, justifyContent: 'center', alignItems: 'center' }}>
+          //       <WarehouseIcon width={size} height={size} fill={color} />
+          //     </View>
+          //   );
           case 'Chat':
             iconName = focused ? 'chatbox' : 'chatbox-outline';
             return <Ionicons name={iconName} size={size} color={color} />;
