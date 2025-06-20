@@ -1,3 +1,12 @@
+ ./gradlew assembleRelease
+
+//Read this
+./xcodebuild clean
+Mvc
+Mmvm
+
+read difference between jsx and js ts and jsx
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
